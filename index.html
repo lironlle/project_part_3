@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>הערכת שכר דירה</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      direction: rtl;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 40px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      text-align: right;
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    h2 {
+      color: #27ae60;
+    }
+
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>הערך שכר דירה</h1>
+
+  <form method="POST">
+
+    <!-- בסיסיים -->
+    <label>גודל (מ"ר): <input name="area" type="number" min="1" required></label>
+    <label>מספר חדרים: <input name="room_num" type="number" min="1" required></label>
+
+    <!-- קטגוריות טקסטואליות -->
+    <label>סוג הנכס:
+      <select name="property_type" required>
+        <option value="">בחר...</option>
+        <option value="דירה">דירה</option>
+        <option value="דירת גן">דירת גן</option>
+        <option value="בית פרטי/ קוטג'">בית פרטי/ קוטג'</option>
+        <option value="גג/ פנטהאוז">גג/ פנטהאוז</option>
+        <option value="מגרשים">מגרשים</option>
+        <option value="דופלקס">דופלקס</option>
+        <option value="תיירות ונופש">תיירות ונופש</option>
+        <option value="כללי">כללי</option>
+      </select>
+    </label>
+
+    <label>שכונה:
+      <select name="neighborhood" required>
+        <option value="">בחר שכונה</option>
+        <option>הצפון הישן החלק המרכזי</option>
+        <option>לב תל אביב החלק הצפוני</option>
+        <option>הצפון הישן החלק הצפוני</option>
+        <option>הצפון הישן החלק הדרום מזרחי</option>
+        <option>פלורנטין</option>
+        <option>הצפון החדש סביבת ככר המדינה</option>
+        <option>הצפון החדש החלק הדרומי</option>
+        <option>הצפון הישן החלק הדרום מערבי</option>
+        <option>קרית שלום</option>
+        <option>כרם התימנים</option>
+        <option>לב תל אביב החלק הדרומי</option>
+        <option>הקריה</option>
+        <option>הצפון החדש החלק הצפוני</option>
+        <option>צפון יפו</option>
+        <option>שפירא</option>
+        <option>יד אליהו</option>
+        <option>נוה שאנן</option>
+        <option>בית שטראוס</option>
+        <option>הגוש הגדול</option>
+        <option>התקווה</option>
+        <option>נוה אביבים</option>
+        <option>מע"ר צפוני</option>
+        <option>שיכון בבלי</option>
+        <option>רמת אביב ג</option>
+        <option>מונטיפיורי</option>
+        <option>שבזי</option>
+        <option>מרכז יפו מערבית לשדרות ירושלים</option>
+        <option>כוכב הצפון</option>
+        <option>תל כביר</option>
+        <option>אזורי חן</option>
+        <option>עג'מי</option>
+        <option>גבעת הרצל</option>
+        <option>עזרא</option>
+        <option>נוה שרת</option>
+        <option>גני צהלה</option>
+        <option>נחלת יצחק</option>
+        <option>חוף הצוק</option>
+        <option>תוכנית ל</option>
+        <option>לינקולן</option>
+        <option>נוה חן</option>
+        <option>יפו ד</option>
+        <option>רמת אביב החדשה</option>
+        <option>תל חיים</option>
+        <option>מרכז יפו מזרחית לשדרות ירושלים</option>
+        <option>בצרון</option>
+        <option>כפיר</option>
+        <option>נאות אפקה ב</option>
+        <option>לבנה</option>
+        <option>נאות אפקה א</option>
+        <option>ניר אביב</option>
+        <option>רביבים</option>
+        <option>רמת החייל</option>
+        <option>נוה ברבור</option>
+        <option>נוה אליעזר</option>
+        <option>אפקה</option>
+        <option>שיכוני חסכון</option>
+        <option>הדר יוסף</option>
+        <option>יפו ג</option>
+        <option>רמת אביב</option>
+        <option>נמל תל אביב</option>
+        <option>רמת ישראל</option>
+        <option>צהלון</option>
+        <option>תל ברוך צפון</option>
+        <option>רמת הטייסים</option>
+        <option>דקר</option>
+        <option>מעוז אביב א</option>
+      </select>
+    </label>
+
+  <label>כתובת:
+  <input name="address" type="text" required
+         pattern="^(?=.*[A-Za-zא-ת])(?=.*\d).+"
+         title="הכתובת חייבת להכיל לפחות אות אחת ולפחות ספרה אחת">
+</label>
+
+
+    <script>
+      document.getElementById('addressInput').addEventListener('input', function () {
+        this.value = this.value.replace(/[0-9]/g, '');
+      });
+    </script>
+
+    <!-- קומות -->
+    <label>קומה: <input name="floor" type="number" min="0" required></label>
+    <label>סה"כ קומות: <input name="total_floors" type="number" min="0" required></label>
+
+    <!-- כלכליים -->
+    <label>גודל גינה (מ"ר): <input name="garden_area" type="number" min="0" required></label>
+    <label>מס' תשלומים: <input name="num_of_payments" type="number" min="1" required></label>
+    <label>ימים לכניסה: <input name="days_to_enter" type="number" min="0" required></label>
+    <label>ארנונה חודשית: <input name="monthly_arnona" type="number" min="0" required></label>
+    <label>מס רכוש: <input name="building_tax" type="number" min="0" required></label>
+
+    <!-- בינאריים -->
+    {% for field, label in {
+      'has_parking': 'חניה',
+      'has_storage': 'מחסן',
+      'elevator': 'מעלית',
+      'ac': 'מזגן',
+      'handicap': 'גישה לנכים',
+      'has_bars': 'סורגים',
+      'has_safe_room': 'ממ"ד',
+      'has_balcony': 'מרפסת',
+      'is_furnished': 'מרוהט',
+      'is_renovated': 'משופץ'
+    }.items() %}
+      <label>{{ label }}:
+        <input name="{{ field }}" type="number" min="0" max="1" step="1" pattern="[01]" required
+               oninput="this.value = (this.value === '0' || this.value === '1') ? this.value : ''">
+      </label>
+    {% endfor %}
+
+    <!-- תיאור -->
+    <label>תיאור: <textarea name="description" rows="3"></textarea></label>
+
+    <button type="submit">הערך עלות</button>
+  </form>
+
+  {% if prediction is not none %}
+    <h2>מחיר מחושב: ₪ {{ prediction|round(2) }}</h2>
+  {% endif %}
+
+  {% if error %}
+    <p>{{ error }}</p>
+  {% endif %}
+
+</body>
+</html>
+
